@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="heading">Todo</h1>
+
+        <button class="mode-btn">
+          <img src="./images/icon-moon.svg" alt="moon icon" />
+        </button>
+      </header>
+
+      <form class="form">
+        <span class="form__label"></span>
+        <input class="form__input" type="text" placeholder="Create a new todo..." id="todo-input" />
+      </form>
+
+      <ul class="list">
+        <div class="list__content"></div>
+        <!-- <p class="list__empty">list is empty!</p> -->
+        <!-- <li class="list__item">
+          <button class="list__item-checkbox list__item-checkbox--completed">
+            <img src="./images/icon-check.svg" alt="" />
+          </button>
+          <span class="list__item-text list-text-completed">Complete online Javascript course</span>
+          <button class="list__item-delete">
+            <img src="./images/icon-cross.svg" alt="delete icon" />
+          </button>
+        </li>
+
+        <li class="list__item">
+          <button class="list__item-checkbox"></button>
+          <span class="list__item-text">Jog around the park 3x</span>
+        </li>
+
+        <li class="list__item">
+          <button class="list__item-checkbox"></button>
+          <span class="list__item-text">10 minutes meditation</span>
+        </li>
+
+        <li class="list__item">
+          <button class="list__item-checkbox"></button>
+          <span class="list__item-text">Read for 1 hour</span>
+        </li>
+
+        <li class="list__item">
+          <button class="list__item-checkbox"></button>
+          <span class="list__item-text">Pick up grocerues</span>
+        </li>
+
+        <li class="list__item">
+          <button class="list__item-checkbox"></button>
+          <span class="list__item-text">Complete Todo App on Frontend Mentor</span>
+        </li> -->
+
+        <div class="list__detail">
+          <div class="list__detail-qty">0 items left</div>
+          <!-- <div class="list__detail-filter">
+            <button class="list__detail-filter-item list__detail-filter--all">All</button>
+            <button class="list__detail-filter-item list__detail-filter--active">Active</button>
+            <button class="list__detail-filter-item list__detail-filter--completed">Completed</button>
+          </div> -->
+          <button class="list__detail-clear">Clear Completed</button>
+        </div>
+      </ul>
+
+      <!-- <div class="list__detail-filter mt pd bs br">
+        <button class="list__detail-filter-item list__detail-filter--all">All</button>
+        <button class="list__detail-filter-item list__detail-filter--active">Active</button>
+        <button class="list__detail-filter-item list__detail-filter--completed">Completed</button>
+      </div> -->
+
+      <div class="hint">Drag and drop to reorder list</div>
+    </div>
+  </body>
+</html>

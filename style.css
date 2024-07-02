@@ -1,0 +1,308 @@
+:root {
+  --color-primary: hsl(220, 98%, 61%);
+  --color-check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  --bg-img-desktop: url(./images/bg-desktop-light.jpg);
+  --bg-img-mobile: url(./images/bg-mobile-light.jpg);
+
+  --text-color: hsl(0, 0%, 98%);
+
+  --bg-color: hsl(236, 33%, 92%);
+  --card-bg: hsl(0, 0%, 98%);
+  --outline-color: hsl(236, 33%, 92%);
+  --placeholder-color: hsl(236, 9%, 61%);
+  --list-color: hsl(235, 19%, 35%);
+  --inactive-color: hsl(233, 11%, 84%);
+  --shadow-color: hsla(240, 5%, 85%, 0.603);
+  --border-color: hsl(236, 33%, 92%);
+
+  /* --color-lt-gray-light-very: hsl(0, 0%, 98%);
+  --color-lt-blue-grayish-light-very: hsl(236, 33%, 92%);
+  --color-lt-blue-grayish-light: hsl(233, 11%, 84%);
+  --color-lt-blue-grayish-dark: hsl(236, 9%, 61%);
+  --color-lt-blue-grayish-dark-very: hsl(235, 19%, 35%);
+
+  --color-dt-blue-dark-very: hsl(235, 21%, 11%);
+  --color-dt-blue-desaturated-dark-very: hsl(235, 24%, 19%);
+  --color-dt-blue-grayish-light: hsl(234, 39%, 85%);
+  --color-dt-blue-grayish-light-hover: hsl(236, 33%, 92%);
+  --color-dt-blue-grayish-dark: hsl(234, 11%, 52%);
+  --color-dt-blue-grayish-dark-very: hsl(233, 14%, 35%);
+  --color-dt-blue-grayish-dark-very-x2: hsl(237, 14%, 26%); */
+
+  --fs-body: 1.8rem;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --item-pd: 2rem;
+  --item-height: 2.4rem;
+}
+
+:root[class='dark'] {
+  --bg-img-desktop: url(./images/bg-desktop-dark.jpg);
+  --bg-img-mobile: url(./images/bg-mobile-dark.jpg);
+
+  --bg-color: hsl(235, 21%, 11%);
+  --card-bg: hsl(235, 24%, 19%);
+  --outline-color: hsl(237, 14%, 26%);
+  --placeholder-color: hsl(234, 11%, 52%);
+  --list-color: hsl(234, 39%, 85%);
+  --inactive-color: hsl(234, 11%, 52%);
+  --shadow-color: hsla(0, 0%, 7%, 0.877);
+  --border-color: hsl(233, 14%, 35%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  height: 100vh;
+  background-color: var(--bg-color);
+  background-image: var(--bg-img-desktop);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 55rem;
+  margin: 5vw auto 0;
+  z-index: 5;
+}
+
+/* header */
+.header {
+  height: 5rem;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.heading {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+}
+
+.mode-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* form */
+.form {
+  padding: var(--item-pd);
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form__label {
+  height: var(--item-height);
+  width: var(--item-height);
+  outline: 1px solid var(--outline-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.form__input {
+  font-family: inherit;
+  font-size: var(--fs-body);
+  color: var(--list-color);
+  background-color: inherit;
+  caret-color: var(--color-primary);
+
+  flex: 1;
+  height: 2.4rem;
+  border: none;
+  outline: none;
+}
+
+.form__input::placeholder {
+  color: var(--placeholder-color);
+}
+
+/* list */
+.list {
+  width: 100%;
+  color: var(--list-color);
+  background-color: var(--card-bg);
+  border-radius: 5px;
+  box-shadow: 1px 8px 10px var(--shadow-color), 2px 5px 7px var(--shadow-color), 1px 7px 4px var(--shadow-color);
+}
+
+.list__empty {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: var(--placeholder-color);
+  width: 100%;
+  height: 25rem;
+  text-align: center;
+  align-content: center;
+}
+
+.list__item {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  padding: var(--item-pd);
+  list-style: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.list__item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.list__item-checkbox {
+  height: 2.4rem;
+  width: 2.4rem;
+  outline: 1px solid var(--outline-color);
+  background-color: inherit;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.list__item-checkbox--completed {
+  background: var(--color-check-bg);
+}
+
+.list__item-text {
+  font-size: var(--fs-body);
+  color: var(--list-color);
+}
+
+.list-text-completed {
+  color: var(--inactive-color);
+  text-decoration: line-through;
+}
+
+.list__item-delete {
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  display: none;
+}
+
+.list__item:hover .list__item-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list__detail {
+  font-size: 1.6rem;
+  color: var(--placeholder-color);
+  padding: var(--item-pd);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list__detail-filter {
+  font-weight: var(--fw-bold);
+  background-color: var(--card-bg);
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list__detail-filter-item {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: var(--fw-bold);
+  color: var(--placeholder-color);
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.list__detail-filter-item:hover {
+  color: var(--list-color);
+}
+
+.list__detail-filter-item:focus {
+  color: var(--color-primary);
+}
+
+.list__detail-clear {
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: var(--placeholder-color);
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.list__detail-clear:hover {
+  color: var(--list-color);
+}
+
+/* hint */
+.hint {
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--placeholder-color);
+  margin-top: 5rem;
+}
+
+.mt {
+  margin-top: 2rem;
+}
+
+.pd {
+  padding: var(--item-pd);
+}
+
+.bs {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.br {
+  border-radius: 5px;
+}
+
+/* device size = 600px */
+@media screen and (max-width: 37.5em) {
+  body {
+    background-image: var(--bg-img-mobile);
+  }
+
+  .container {
+    max-width: 40rem;
+  }
+}
+
+@media screen and (max-width: 25em) {
+  .container {
+    max-width: 25rem;
+  }
+}
